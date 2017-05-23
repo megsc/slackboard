@@ -1,0 +1,4 @@
+<div class = "background left-align">
+  <span class = "bold"><%= gravatar_for message.user %><%= message.user.name %></span> <span><%= DateTime.parse(message.timestamp).strftime('%H:%M') %></span><br>
+  <%= message.body %><br>
+</div>

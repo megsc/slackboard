@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170523022302) do
+ActiveRecord::Schema.define(version: 20170523040729) do
 
   create_table "channels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(version: 20170523022302) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_channels_on_user_id", using: :btree
+  end
+
+  create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "body",       limit: 65535
+    t.integer  "user_id"
+    t.integer  "channel_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["channel_id"], name: "index_messages_on_channel_id", using: :btree
+    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -38,4 +48,6 @@ ActiveRecord::Schema.define(version: 20170523022302) do
   end
 
   add_foreign_key "channels", "users"
+  add_foreign_key "messages", "channels"
+  add_foreign_key "messages", "users"
 end

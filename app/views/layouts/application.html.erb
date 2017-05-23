@@ -6,6 +6,7 @@
      <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <div class = "outer">
@@ -28,7 +29,9 @@
     </header>
   <body>
     <main class = "center-align full-height">
-     <%= yield %>
+      <div class = "container ">
+        <%= yield %>
+      </div>
       <br class = "clearfloat" />
     </main>
     <footer class="page-footer #FFB060 orange center-align">
