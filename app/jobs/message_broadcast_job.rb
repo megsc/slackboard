@@ -3,7 +3,7 @@ class MessageBroadcastJob < ApplicationJob
 
   def perform(message)
     ActionCable.server.broadcast "channels_#{message.channel.id}_channel",
-                                 message: 'MESSAGE_HTML'
+                                 message: render_message(message)
   end
 
   private
