@@ -16,13 +16,14 @@
               <a href="" class="brand-logo"><div class = "image-margins"></a>
               <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
               <ul class="right hide-on-med-and-down">
-                <li class = "shutter-out-horizontal"></li>
+                <%= yield :header %>        
                 <li class = "shutter-out-horizontal"><a href="" >Contact</a></li>
                 <li class = "shutter-out-horizontal"><a href="">About</a></li>
               </ul>
               <ul class="side-nav" id="mobile-demo">
+                <%= yield :header %>
                 <li><a href="">Contact</a></li>
-                <li><a href="">About</a></li>
+                <li><a href="">About</a></li> 
               </ul>
             </div>
           </nav>

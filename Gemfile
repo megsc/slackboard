@@ -25,6 +25,7 @@ gem 'devise'
 gem 'materialize-sass'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 gem 'redis', '~> 3.2'
+gem 'bcrypt', '~> 3.1.11'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
