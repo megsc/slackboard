@@ -29,9 +29,12 @@
           </nav>
     </header>
   <body>
+    <%= yield :side_bar %>
     <main class = "center-align full-height">
       <div class = "container ">
+      
         <%= yield %>
+     
       </div>
       <br class = "clearfloat" />
     </main>
@@ -51,6 +54,7 @@
     </footer>
   </div>
   </body>
+</div>
 </html>
 <script>
   $( document ).ready(function()

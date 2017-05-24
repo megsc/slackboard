@@ -18,6 +18,7 @@ class ChannelsController < ApplicationController
   end
 
   def show
+    @channels = Channel.all
     @channel = Channel.includes(:messages).find_by(id: params[:id])
     @message = Message.new
   end

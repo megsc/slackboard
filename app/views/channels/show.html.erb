@@ -2,19 +2,33 @@
   <li class = "shutter-out-horizontal"><%= link_to('Log out', destroy_user_session_path, :method => :delete)%></li> 
 <% end %>
 
-<h1><%= @channel.title %></h1>
-
 <div id="messages" data-channel-id="<%= @channel.id %>">
   <%= render @channel.messages %>
 </div>
 
-<%= form_for @message, url: '#' do |f| %>
-<%= hidden_field_tag 'channel_id', @channel.id %>
-  <div class="form-group">
-    <%= f.label :body %>
-    <%= f.text_area :body, class: 'form-control' %>
-    <small class="text-muted">From 2 to 1000 characters</small>
-  </div>
+<% content_for :side_bar do %>
+	<div class = "index-side-bar left-align">
+		<p>Channels</p>
 
-  <%= f.submit "Post" %>
+		<p><%= link_to 'New channel', new_channel_path %></p>
+
+		<ul>
+		  <%= render @channels %>
+		</ul>
+	</div>
 <% end %>
+
+<div class "chat-panel">
+	<h5><%= @channel.title %></h5>
+
+	<%= form_for @message, url: '#' do |f| %>
+	<%= hidden_field_tag 'channel_id', @channel.id %>
+	  <div class="form-group">
+	    <%= f.label :body %>
+	    <%= f.text_area :body, class: 'form-control' %>
+	    <small class="text-muted">From 2 to 1000 characters</small>
+	  </div>
+
+	  <%= f.submit "Post" %>
+	<% end %>
+</div>
