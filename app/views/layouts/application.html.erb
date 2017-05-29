@@ -29,32 +29,29 @@
           </nav>
     </header>
   <body>
-    <%= yield :side_bar %>
-    <main class = "center-align full-height">
-      <div class = "container ">
+   
+    <main class = "center-align">
       
+        <div class="row left-align">
+         
+           <%= yield :side_bar %>
+            
+   
+        </div>
         <%= yield %>
-     
-      </div>
-      <br class = "clearfloat" />
     </main>
     <footer class="page-footer #FFB060 orange center-align">
-      <div class="container center-align">
-        <a class="icon-facebook" href="#"></a>
-        <a class="icon-deviantart" href="#"></a>
-        <a class="icon-digg" href="#"></a>
-        <a class="icon-forrst" href="#"></a>
-        <a class="icon-lastfm" href="#"></a>          
+      <div class="container center-align">          
       </div>
-        <div class="footer-copyright">
+      <div class="footer-copyright">
         <div class="container">
           © 2017 Copyright Text
         </div>
       </div>        
     </footer>
-  </div>
+  
   </body>
-</div>
+
 </html>
 <script>
   $( document ).ready(function()

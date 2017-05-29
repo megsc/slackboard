@@ -7,20 +7,17 @@
 </div>
 
 <% content_for :side_bar do %>
-	<div class = "index-side-bar left-align">
-		<p>Channels</p>
+  <div class="col m1 #82b1ff blue accent-1 height"><p>Channels</p>
+    <p><%= link_to 'New channel', new_channel_path %></p>
+      <ul>
+	    <%= render @channels %>
+	  </ul>
+  </div>
+     
+  <div class="col s11 #fff59d yellow lighten-3 height">
+  	<h5><%= @channel.title %></h5>
 
-		<p><%= link_to 'New channel', new_channel_path %></p>
-
-		<ul>
-		  <%= render @channels %>
-		</ul>
-	</div>
-<% end %>
-
-<div class "chat-panel">
-	<h5><%= @channel.title %></h5>
-
+    <%= yield :message %>
 	<%= form_for @message, url: '#' do |f| %>
 	<%= hidden_field_tag 'channel_id', @channel.id %>
 	  <div class="form-group">
@@ -31,4 +28,6 @@
 
 	  <%= f.submit "Post" %>
 	<% end %>
-</div>
+    </div>	
+<% end %>
+

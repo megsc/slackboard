@@ -38,12 +38,10 @@
 }
 
 
-.full-height {
-    height: 100%;
-}
 
 .outer{
 	background-color: #fff;
+	height: 800px;
 }
 
 .nav-height{
@@ -56,7 +54,7 @@
 }
 
 .message {
-  overflow-y: auto;
+  
   .avatar {
     margin: 0.5rem;
   }
@@ -66,24 +64,13 @@
 	font-weight:bold;
 }
 
-.background{
-	background-color: #FFB060;
-	padding-left:5px;
-	padding-top:5px;
+.height{
+	margin-bottom:-20px;
+	height:840px;
+	 .avatar {
+	    margin: 0.5rem;
+	  }
 }
 
-.index-side-bar{
-	height:800px;
-	background-color: #3F8A9F;
-	width:10%;
-	float:left;
-}
 
-.chat-panel{
-	
-	overflow-y: scroll;
-
-	
-	
-}
 
