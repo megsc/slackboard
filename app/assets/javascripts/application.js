@@ -1,6 +1,10 @@
+
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require materialize-sprockets
+//= require turbolinks
+//= require cable
+//= require_tree . 
 
 (function() {
   $(document).on('click', '.toggle-window', function(e) {
@@ -17,3 +21,5 @@
     }
   });
 })();
+
+

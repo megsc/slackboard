@@ -1,3 +1,4 @@
+
 <li>
   <div class="row">
     <div class="<%= user.id == message.user_id ? 'message-sent' : 'message-received' %>">
@@ -5,3 +6,10 @@
     </div>
   </div>
 </li>
+
+<% content_for :message do %>
+  <span class = "bold"><%= gravatar_for message.user %><%= message.user.name %></span> <span><%= message.timestamp %></span><br>
+  <%= message.body %><br>
+<% end %>
+	
+

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SQLite version 3.x
 #   gem install sqlite3
 #
@@ -12,13 +13,38 @@ default: &default
 development:
   <<: *default
   database: db/development.sqlite3
+=======
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: chat_app
+  password: chat_app
+  host: 223.27.22.124
+  port: 3306
+
+development:
+  <<: *default
+  database: chat_app
+>>>>>>> master
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
+<<<<<<< HEAD
   <<: *default
   database: db/test.sqlite3
+=======
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: chat_appTest
+  password: chat_appTest
+  host: 223.27.22.124
+  port: 3306
+  database: chat_appTest
+>>>>>>> master
 
 production:
   <<: *default

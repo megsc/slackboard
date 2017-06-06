@@ -7,10 +7,13 @@ class MessageBroadcastJob < ApplicationJob
 
     broadcast_to_sender(sender, message)
     broadcast_to_recipient(recipient, message)
+    ActionCable.server.broadcast "channels_#{message.channel.id}_channel",
+                                 message: render_message(message)
   end
 
   private
 
+<<<<<<< HEAD
   def broadcast_to_sender(user, message)
     ActionCable.server.broadcast(
       "conversations-#{user.id}",
@@ -42,3 +45,4 @@ class MessageBroadcastJob < ApplicationJob
     )
   end
 end
+

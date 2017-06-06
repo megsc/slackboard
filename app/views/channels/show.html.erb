@@ -1,0 +1,34 @@
+<% content_for :header do %>
+  <li class = "shutter-out-horizontal"><%= link_to('Log out', destroy_user_session_path, :method => :delete)%></li> 
+<% end %>
+
+<div id="messages" data-channel-id="<%= @channel.id %>">
+  <%= render @channel.messages %>
+</div>
+
+<% content_for :side_bar do %>
+  <div class="col m1 #82b1ff blue accent-1 height"><p>Channels</p>
+    <p><%= link_to 'New channel', new_channel_path %></p>
+      <ul>
+	    <%= render @channels %>
+	  </ul>
+  </div>
+     
+  <div class="col s11 height">
+  	<h5><%= @channel.title %></h5>
+
+    <%= yield :message %>
+  
+	<%= form_for @message, url: '#' do |f| %>
+	<%= hidden_field_tag 'channel_id', @channel.id %>
+	  <div class="form-group form-bottom">
+	    <%= f.label :body %>
+	    <%= f.text_area :body, class: 'form-control' %>
+	    <small class="text-muted">From 2 to 1000 characters</small>
+	  </div>
+
+	  <%= f.submit "Post" %>
+	<% end %>
+    </div>	
+<% end %>
+
