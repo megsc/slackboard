@@ -1,17 +1,21 @@
 class GroupsController < ApplicationController
+  def show
+      @group = Group.find_by(id: params[:id])
+  end
+
   def index
     @groups = Group.all
   end
 
   def new
-    @group = Group.new
+  @test = Group.new
   end
 
   def create
     @group= current_user.groups.build(group_params)
     if @group.save
       flash[:success] = 'Group added!'
-      redirect_to groups_path
+      redirect_to user_groups_path(current_user.id)
     else
       render 'new'
     end
@@ -19,7 +23,7 @@ class GroupsController < ApplicationController
 
   private
 
-  def chat_room_params
+  def group_params
     params.require(:group).permit(:title)
   end
 end

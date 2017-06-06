@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :channels, dependent: :destroy
   has_many :messages, dependent: :destroy
+  has_many :groups, dependent: :destroy
 
   def name
   email.split('@')[0]
