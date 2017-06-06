@@ -42,22 +42,15 @@
 .outer{
 	background-color: #fff;
 	height: 800px;
+	min-height:900px;
 }
 
 .nav-height{
 	height:65px;
 }
 
-
 .shutter-out-horizontal{
 	@include shutter-out-horizontal;
-}
-
-.message {
-  
-  .avatar {
-    margin: 0.5rem;
-  }
 }
 
 .bold{
@@ -67,10 +60,17 @@
 .height{
 	margin-bottom:-20px;
 	height:840px;
+	overflow: scroll;
 	 .avatar {
 	    margin: 0.5rem;
 	  }
 }
+
+.form-bottom{
+	margin-top:500px;
+}
+
+
 
 
 

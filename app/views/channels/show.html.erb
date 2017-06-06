@@ -14,13 +14,14 @@
 	  </ul>
   </div>
      
-  <div class="col s11 #fff59d yellow lighten-3 height">
+  <div class="col s11 height">
   	<h5><%= @channel.title %></h5>
 
     <%= yield :message %>
+  
 	<%= form_for @message, url: '#' do |f| %>
 	<%= hidden_field_tag 'channel_id', @channel.id %>
-	  <div class="form-group">
+	  <div class="form-group form-bottom">
 	    <%= f.label :body %>
 	    <%= f.text_area :body, class: 'form-control' %>
 	    <small class="text-muted">From 2 to 1000 characters</small>

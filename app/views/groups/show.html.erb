@@ -1,0 +1,5 @@
+<% content_for :header do %>
+  <li class = "shutter-out-horizontal"><%= link_to('Log out', destroy_user_session_path, :method => :delete)%></li> 
+<% end %>
+
+<h5><%= @group.title %></h5>
